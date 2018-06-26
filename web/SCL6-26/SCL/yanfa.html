@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<!-- start: Meta -->
+		<meta charset="utf-8">
+		<title>市级研平台调研表</title>
+		<meta name="description" content="Bootstrap Metro Dashboard">
+		<meta name="author" content="Dennis Ji">
+		<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+		<!-- end: Meta -->
+
+		<!-- start: Mobile Specific -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- end: Mobile Specific -->
+
+		<!-- start: CSS -->
+		<link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link id="base-style" href="css/style.css" rel="stylesheet">
+		<link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+		<!-- end: CSS -->
+
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<!-- end: Favicon -->
+
+		<style>
+			#duiqi {
+				vertical-align: middle;
+				text-align: center;
+			}
+		</style>
+
+	</head>
+
+	<body ng-app="yanfa" ng-controller="yanfacontroller">
+		<!-- start: Header -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="index.html"><span style="font-size: 20px;">客户关系管理系统</span></a>
+
+					<!-- start: Header Menu -->
+					<div class="nav-no-collapse header-nav">
+						<ul class="nav pull-right">
+
+							<!-- start: 顶部右侧 -->
+							<li class="dropdown">
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+									<i class="halflings-icon white user"></i><span class="userName"></span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li class="dropdown-menu-title">
+										<span>系统设置</span>
+									</li>
+									<li>
+										<a href="#"><i class="halflings-icon user"></i>简介</a>
+									</li>
+									<li>
+										<a href="login.html"><i class="halflings-icon off"></i> 退出</a>
+									</li>
+								</ul>
+							</li>
+							<!-- end: User Dropdown -->
+						</ul>
+					</div>
+					<!-- end: Header Menu -->
+
+				</div>
+			</div>
+		</div>
+		<!-- start: Header -->
+
+		<div class="container-fluid-full">
+			<div class="row-fluid">
+
+				<!-- 动态生成左侧导航条  style="width: 155px;"-->
+				<div id="sidebar-left" class="span2">
+					<div class="daohang nav-collapse sidebar-nav">
+
+					</div>
+				</div>
+
+				<!-- end: Main Menu -->
+
+				<noscript>
+				<div class="alert alert-block span10">
+					<h4 class="alert-heading">Warning!</h4>
+					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+				</div>
+			</noscript>
+
+				<!-- start: Content -->
+				<div id="content" class="span10">
+
+					<ul class="breadcrumb">
+						<li>
+							<i class="icon-home"></i>
+							<a href="index.html">主页</a>
+							<i class="icon-angle-right"></i>
+						</li>
+						<li>
+							<a href="#">廊坊市市级研发平台调研表</a>
+						</li>
+					</ul>
+
+					<div class="row-fluid sortable" style="min-height: 1000px;">
+						<div class="box span12">
+							<div class="box-header">
+								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>研发平台调研表</h2>
+								<div class="box-icon">
+
+									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+									<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+								</div>
+							</div>
+							<div class="box-content">
+								<table style="margin-top: 10px;width: 100%;">
+									<tr>
+										<td id="rycx" ng-show="{{datas}}==1||{{datas}}==2">按人员查询：
+											<select id="renyuan" style="width: 45%;">
+												<option>
+												</option>
+											    <option ng-repeat="renyuan in renyuans" value="{{renyuan.username}}" ng-bind="renyuan.username">
+												</option>
+										    </select>
+										</td>	
+										<td>
+											Search:&nbsp;<input class="input-xlarge focused" id="search" type="text" placeholder="请输入平台名称"> <i class="cx halflings-icon search" style="margin-top: 5px;"></i>
+										</td>
+									</tr>
+								</table>
+
+								<div class="table-responsive">
+
+									<table class="table table-bordered table-striped table-condensed" style="margin-top: 5px;">
+										<thead>
+											<tr>
+												<th id="duiqi" rowspan="3">序号</th>
+												<th id="duiqi" rowspan="3" ng-show="{{datas}}==2||{{datas}}==1">人员</th>
+												<th id="duiqi" rowspan="3">研发平台名称</th>
+												<th id="duiqi" rowspan="3">项目承担单位</th>
+												<th id="duiqi" rowspan="3">所属领域</th>
+												<th id="duiqi" rowspan="3">所属区域</th>
+												<th id="duiqi" rowspan="3">平台级别</th>
+												<th id="duiqi" rowspan="3">平台类别</th>
+												<th id="duiqi" rowspan="3">近三年研发总投入</th>
+												<th id="duiqi" rowspan="3">近三年产生效益</th>
+												<th id="duiqi" rowspan="3">近三年承担项目总量</th>
+												<th id="duiqi" rowspan="3">近三年成果转化数量</th>
+												<th id="duiqi" colspan="2">知识产权</th>
+												<th id="duiqi" colspan="4">研发团队</th>
+												<th id="duiqi" rowspan="3">研发场地面积</th>
+												<th id="duiqi" rowspan="3">引进培养人才</th>
+												<th id="duiqi" colspan="2">研发设备</th>
+												<th id="duiqi" rowspan="3">突破关键技术</th>
+												<th id="duiqi" colspan="3">制定标准数量</th>
+												<th id="duiqi" rowspan="3">企业类型</th>
+												<th id="duiqi" rowspan="3">操作</th>
+											</tr>
+											<tr>
+												<th id="duiqi" rowspan="2">企业拥有专利</th>
+												<th id="duiqi" rowspan="2">发明专利</th>
+												<th id="duiqi" colspan="2">千人计划</th>
+												<th id="duiqi" colspan="2">院士</th>
+												<th id="duiqi" rowspan="2">研发设备数量</th>
+												<th id="duiqi" rowspan="2">研发设备原值</th>
+												<th id="duiqi" rowspan="2">国际标准</th>
+												<th id="duiqi" rowspan="2">国家标准</th>
+												<th id="duiqi" rowspan="2">行业标准</th>
+											</tr>
+											<tr>
+												<th id="duiqi">人数</th>
+												<th id="duiqi">姓名</th>
+												<th id="duiqi">人数</th>
+												<th id="duiqi">姓名</th>
+											</tr>
+										</thead>
+										<tr ng-repeat="yanfaroot in pageData.root" 　id="{{yanfaroot.id}}">
+											<td ng-bind="pageData.start+$index+1"></td>
+											<td style="text-align: center;" ng-bind="yanfaroot.username"　ng-show="{{datas}}==2||{{datas}}==1"></td>
+											<td ng-bind="yanfaroot.researchName"></td>
+											<td ng-bind="yanfaroot.researchCompany"></td>
+											<td ng-bind="yanfaroot.researchField"></td>
+											<td>{{yanfaroot.province}}-{{yanfaroot.city}}-{{yanfaroot.county}}</td>
+											<td ng-bind="yanfaroot.platKind"></td>
+											<!--平台级别-->
+											<td ng-bind="yanfaroot.platClass">&nbsp;</td>
+											<!--平台类别-->
+										
+											<td ng-bind="yanfaroot.researchTotalincome">&nbsp;</td>
+											<!--近三年研发总投入 -->
+										
+											<td ng-bind="yanfaroot.totalbenefit">&nbsp;</td>
+											<!--近三年产生效益-->
+										
+											<td ng-bind="yanfaroot.projectGross">&nbsp;</td>
+											<td ng-bind="yanfaroot.resultTransfornum">&nbsp;</td>
+											<td ng-bind="yanfaroot.patentNum">&nbsp;</td>
+											<td ng-bind="yanfaroot.inventPatent">&nbsp;</td>
+											<td ng-bind="yanfaroot.thousandpplannum">&nbsp;</td>
+											<!--千人计划人数和姓名-->
+											<td ng-bind="yanfaroot.thousandpplanname">&nbsp;</td>
+											<td ng-bind="yanfaroot.academiciannum">&nbsp;</td>
+											<!--院士人数和姓名-->
+											<td ng-bind="yanfaroot.academicianname">&nbsp;</td>
+											<td ng-bind="yanfaroot.reasearchSitearea">&nbsp;</td>
+											<td ng-bind="yanfaroot.introducePersontrain">&nbsp;</td>
+											<td ng-bind="yanfaroot.deviceNum">&nbsp;</td>
+											<td ng-bind="yanfaroot.deviceValue">&nbsp;</td>
+											<td ng-bind="yanfaroot.keyTechnical">&nbsp;</td>
+											<td ng-bind="yanfaroot.internalStandard">&nbsp;</td>
+											<td ng-bind="yanfaroot.nationalStandard">&nbsp;</td>
+											<td ng-bind="yanfaroot.industrialStandard">&nbsp;</td>
+											<td ng-bind="yanfaroot.companyKindname">&nbsp;</td>
+											<td>
+												<button ng-click="editkh(yanfaroot.id)" class="btn btn-info">编辑</button>
+												<button ng-click="delkh(yanfaroot.id)" class="delkh btn btn-danger">  删除</button>
+											</td>
+										</tr>
+									</table>
+
+								</div>
+								<div class="pagination pagination-centered">
+									<ul>
+										<li>
+											<a href="#" class="prev">上一页</a>
+										</li>
+										<li class="active">
+											<span>第 <a href="#" class="dang"></a>页</span>
+										</li>
+										<li><span>共<a href="#" class="zong"></a>页</span></li>
+										<li>
+											<a href="#" class="next">下一页</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+					<!--/row-->
+
+					<div><span style="color: red;display: none;" class="ts"></span></div>
+				</div>
+				<!--/.fluid-container-->
+
+				<!-- end: Content -->
+			</div>
+			<!--/#content.span10-->
+		</div>
+		<!--/fluid-row-->
+
+		<div class="clearfix"></div>
+
+		<footer>
+
+			<p>
+				<span style="text-align:left;float:left">&copy; 2017 <a href="http://www.lfshitong.com/" style="color: white;">廊坊开发区世通科技有限公司</a></span>
+
+			</p>
+
+		</footer>
+
+		<!-- start: JavaScript-->
+		<script src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/angularjs/angular-1.5.8.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/angularjs/common.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/pagejs/configs.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/jquery-cookie.js"></script>
+		<script src="js/pagejs/ifLogin.js"></script>
+		<script src="js/pagejs/daohang.js"></script>
+		<script src="js/pagejs/yanfalist.js"></script>
+
+		<script src="js/jquery-migrate-1.0.0.min.js"></script>
+
+		<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+
+		<script src="js/jquery.ui.touch-punch.js"></script>
+
+		<script src="js/modernizr.js"></script>
+
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/jquery.cookie.js"></script>
+
+		<script src='js/fullcalendar.min.js'></script>
+
+		<script src='js/jquery.dataTables.min.js'></script>
+
+		<script src="js/excanvas.js"></script>
+		<script src="js/jquery.flot.js"></script>
+		<script src="js/jquery.flot.pie.js"></script>
+		<script src="js/jquery.flot.stack.js"></script>
+		<script src="js/jquery.flot.resize.min.js"></script>
+
+		<script src="js/jquery.chosen.min.js"></script>
+
+		<script src="js/jquery.uniform.min.js"></script>
+
+		<script src="js/jquery.cleditor.min.js"></script>
+
+		<script src="js/jquery.noty.js"></script>
+
+		<script src="js/jquery.elfinder.min.js"></script>
+
+		<script src="js/jquery.raty.min.js"></script>
+
+		<script src="js/jquery.iphone.toggle.js"></script>
+
+		<script src="js/jquery.uploadify-3.1.min.js"></script>
+
+		<script src="js/jquery.gritter.min.js"></script>
+
+		<script src="js/jquery.imagesloaded.js"></script>
+
+		<script src="js/jquery.masonry.min.js"></script>
+
+		<script src="js/jquery.knob.modified.js"></script>
+
+		<script src="js/jquery.sparkline.min.js"></script>
+
+		<script src="js/counter.js"></script>
+
+		<script src="js/retina.js"></script>
+
+		<script src="js/custom.js"></script>
+		<!-- end: JavaScript-->
+
+	</body>
+
+</html>

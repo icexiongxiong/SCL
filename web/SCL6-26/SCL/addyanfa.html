@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- start: Meta -->
+		<meta charset="utf-8">
+		<title>新增研发平台调研表</title>
+		<meta name="description" content="Bootstrap Metro Dashboard">
+		<meta name="author" content="Xiongli">
+		<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link id="bootstrap-style" href="css/bootstrap.css" rel="stylesheet">
+		<link href="css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
+
+		<link rel="stylesheet" href="css/bootstrapValidator.css" />
+
+		<link href="css/htmleaf-demo.css" />
+		<link href="css/bootstrap-datepicker3.css" />
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link id="base-style" href="css/style.css" rel="stylesheet">
+		<link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+		<!-- end: CSS -->
+
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<style>
+			.control-label {
+				height: 38px;
+				line-height: 38px;
+				vertical-align: middle;
+				font-size: 16px;
+				font-weight: 600;
+			}
+			
+			.controls {
+				height: 38px;
+				line-height: 38px;
+				vertical-align: middle;
+				font-size: 16px;
+				font-weight: 600;
+			}
+		</style>
+
+	</head>
+
+	<body ng-app="addyanfa" ng-controller="addyanfacontroller">
+		<!-- start: Header -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="index.html"><span style="font-size: 20px;">客户关系管理系统</span></a>
+
+					<!-- start: Header Menu -->
+					<div class="nav-no-collapse header-nav">
+						<ul class="nav pull-right">
+
+							<!-- start: 顶部右侧设置-->
+							<li class="dropdown">
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+									<i class="halflings-icon white user"></i> <span class="userName"></span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li class="dropdown-menu-title">
+										<span>系统设置</span>
+									</li>
+									<li>
+										<a href="#"><i class="halflings-icon user"></i>简介</a>
+									</li>
+									<li>
+										<a href="login.html"><i class="halflings-icon off"></i> 退出</a>
+									</li>
+								</ul>
+							</li>
+							<!-- end: User Dropdown -->
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- start: Header -->
+
+		<div class="container-fluid-full">
+			<div class="row-fluid">
+				<!--左侧导航-->
+				<div id="sidebar-left" class="span2">
+					<div class="daohang nav-collapse sidebar-nav">
+
+					</div>
+				</div>
+
+				<!-- end: Main Menu -->
+
+				<noscript>
+				<div class="alert alert-block span10">
+					<h4 class="alert-heading">Warning!</h4>
+					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+				</div>
+			</noscript>
+
+				<!-- start: Content -->
+				<div id="content" class="span10">
+
+					<ul class="breadcrumb">
+						<li>
+							<i class="icon-home"></i>
+							<a href="index.html">主页</a>
+							<i class="icon-angle-right"></i>
+						</li>
+						<li>
+							<i class="icon-edit"></i>
+							<a href="#">新增客户</a>
+						</li>
+					</ul>
+
+					<div class="row-fluid sortable">
+
+					</div>
+					<!--/row-->
+
+					<div class="row-fluid sortable">
+						<div class="box span12">
+							<div class="box-header" data-original-title>
+								<h2><i class="halflings-icon white edit"></i><span class="break"></span>市级研发平台调研表</h2>
+								<div class="box-icon">
+									<!--<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>-->
+									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+									<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+								</div>
+							</div>
+							<div class="box-content">
+								<form class="form-horizontal" id="defaultForm">
+									<fieldset>
+										<table class="table">
+											<tr style="line-height: 25px;  position: relative;top: 50%;">
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="platname">研发平台名称</label>
+														<div class="controls">
+															<input class="form-control" type="text" id="platname" name="platname">
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="companyname">项目承担单位</label>
+														<div class="controls">
+															<input class="form-control" type="text" id="companyname" name="companyname">
+
+														</div>
+													</div>
+												</td>
+
+											</tr>
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="lingyu">所属领域</label>
+														<div class="controls">
+															<select id="lingyu" name="lingyu" style="width: 257px;">
+
+															</select>
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<label class="control-label">所属区域</label>
+														<div class="controls">
+															<select id="cmbProvince" name="cmbProvince" style="width: 20%;"></select>
+															<select id="cmbCity" name="cmbCity" style="width: 20%;"></select>
+															<select id="cmbArea" name="cmbArea" style="width: 20%;"></select>
+
+														</div>
+														<div class="controls">
+															<input class="form-control" type="text" id="detailaddress" name="detailaddress" placeholder="请输入您的详细地址" style="width: 242px;">
+														</div>
+													</div>
+
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="platkind">平台级别</label>
+														<div class="controls">
+															<select id="platkind" name="platkind" style="width: 257px;">
+																<option value="国家级">国家级</option>
+																<option value="省级">省级</option>
+																<option value="市级">市级</option>
+
+															</select>
+														</div>
+
+													</div>
+
+												</td>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="platClass">平台类别</label>
+														<div class="controls">
+															<input class="form-control" type="text" id="platClass" name="platClass" style="width: 242px;">
+															</select>
+														</div>
+													</div>
+
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="totalinvest">近三年研发总投入</label>
+														<div class="controls">
+															<input class="form-control" type="number" id="totalinvest" name="totalinvest" min="0">
+														</div>
+													</div>
+
+												</td>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="totalbenefit">近三年产生效益</label>
+														<div class="controls">
+															<input class="form-control" type="number" id="totalbenefit" name="totalbenefit" min="0">
+														</div>
+													</div>
+
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="projectnum">近三年承担项目总量</label>
+														<div class="controls">
+
+															<input class="form-control" type="number" id="projectnum" name="projectnum" min="0">
+
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="transnum">近三年成果转化数量</label>
+														<div class="controls">
+															<input class="form-control" type="number" id="transnum" name="transnum" min="0">
+
+														</div>
+													</div>
+
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="patentnum">企业拥有专利数</label>
+														<div class="controls">
+															<input class="form-control" type="number" id="patentnum" name="patentnum" min="0">
+
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="inventpatent">发明专利</label>
+														<div class="controls">
+															<input class="form-control" type="number" id="inventpatent" name="inventpatent" min="0">
+															<span style="color: red;display: none;" class="fm"></span>
+														</div>
+													</div>
+
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="teamperson">研发团队人员</label>
+														<div class="controls">
+
+															<input class="form-control" type="text" id="teamperson" name="teamperson">
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="thousplannum">千人计划人数</label>
+														<div class="controls">
+															<select id="thousplannum" name="thousplannum" style="width: 256px;" ng-model="size">
+																<option value="0">0</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+															</select>
+
+														</div>
+													</div>
+
+												</td>
+												<td>
+													<div class="form-group">
+														<div class="controls">
+															<input type="text" id="thousandpplanname" name="thousandpplanname" style="width: 12%;" ng-disabled="disableInput(1)">
+															<input type="text" id="thousandpplanname2" name="thousandpplanname2" value="" style="width: 12%;;" ng-disabled="disableInput(2)">
+															<input type="text" id="thousandpplanname3" name="thousandpplanname3" style="width: 12%;" ng-disabled="disableInput(3)">
+															<input type="text" id="thousandpplanname4" name="thousandpplanname4" value="" style="width: 12%;" ng-disabled="disableInput(4)">
+															<input type="text" id="thousandpplanname5" name="thousandpplanname5" value="" style="width: 12%;" ng-disabled="disableInput(5)">
+														</div>
+													</div>
+
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="academiciannum">院士人数</label>
+														<div class="controls">
+															<select id="academiciannum" name="academiciannum" style="width: 256px;" ng-model="s2">
+																<option value="0">0</option>
+																<option value="1">1</option>
+																<option value="2">2</option>
+																<option value="3">3</option>
+																<option value="4">4</option>
+																<option value="5">5</option>
+															</select>
+														</div>
+													</div>
+
+												</td>
+												<td>
+													<div class="form-group">
+														<div class="controls">
+															<input type="text" id="academicianname" name="academicianname" style="width: 12%;" ng-disabled="disableInput2(1)">
+															<input type="text" id="academicianname2" name="academicianname2" value="" style="width: 12%;;" ng-disabled="disableInput2(2)">
+															<input type="text" id="academicianname3" name="academicianname3" style="width: 12%;" ng-disabled="disableInput2(3)">
+															<input type="text" id="academicianname4" name="academicianname4" value="" style="width: 12%;" ng-disabled="disableInput2(4)">
+															<input type="text" id="academicianname5" name="academicianname5" value="" style="width: 12%;" ng-disabled="disableInput2(5)">
+														</div>
+													</div>
+
+												</td>
+
+											</tr>
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="sitearea">研发场地面积</label>
+														<div class="controls">
+															<input class="form-control" type="number" id="sitearea" name="sitearea">
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="growperson">引进培养人才</label>
+														<div class="controls">
+															<input class="form-control" type="number" id="growperson" name="growperson">
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="devicenum">研发设备数量</label>
+														<div class="controls">
+															<input class="form-control" type="number" id="devicenum" name="devicenum" min="0">
+														</div>
+													</div>
+
+												</td>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="devicevalue">研发设备原值</label>
+														<div class="controls">
+															<input class="form-control" type="number" id="devicevalue" name="devicevalue" min="0">
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="keyskill">关键突破技术</label>
+														<div class="controls">
+															<input class="form-control" type="number" id="keyskill" name="keyskill" min="0">
+														</div>
+													</div>
+
+												</td>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="interstandard">国际标准</label>
+														<div class="controls">
+															<input class="form-control" type="text" id="interstandard" name="interstandard">
+														</div>
+													</div>
+												</td>
+											</tr>
+
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="nationstandard">国家标准</label>
+														<div class="controls">
+															<input class="form-control" type="text" id="nationstandard" name="nationstandard">
+														</div>
+													</div>
+												</td>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="industrystandard">行业标准</label>
+														<div class="controls">
+															<input class="form-control" type="text" id="industrystandard" name="industrystandard">
+														</div>
+													</div>
+												</td>
+
+											</tr>
+											<tr>
+												<td>
+													<div class="form-group">
+														<label class="control-label" for="companytype">企业类型</label>
+														<div class="controls">
+															<input class="form-control" type="text" id="companytypes" name="companytypes">
+															<select id="companytype" name="companytype" style="width: 257px;">
+																<option value="小巨人企业">小巨人企业</option>
+																<option value="创新基金企业">创新基金企业</option>
+																<option value="高新技术企业">高新技术企业</option>
+
+															</select>
+
+														</div>
+													</div>
+
+												</td>
+
+											</tr>
+
+										</table>
+										<div class="form-group">
+											<center>
+												<button type="button" class="yanfasave btn btn-primary">保存</button>&nbsp;&nbsp;&nbsp;&nbsp;
+												<button class="btn" type="reset">清空</button>
+											</center>
+										</div>
+									</fieldset>
+
+								</form>
+							</div>
+						</div>
+
+					</div>
+					<div><span style="color: red;display: none;" class="ts"></span></div>
+
+				</div>
+				<!--/.fluid-container-->
+
+				<!-- end: Content -->
+			</div>
+			<!--/#content.span10-->
+		</div>
+		<!--/fluid-row-->
+
+		<div class="modal hide fade" id="myModal">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h3>Settings</h3>
+			</div>
+			<div class="modal-body">
+				<p>Here settings can be configured...</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">Close</a>
+				<a href="#" class="btn btn-primary">Save changes</a>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+
+		<footer>
+
+			<p>
+				<span style="text-align:left;float:left">&copy; 2017 <a href="http://www.lfshitong.com/" style="color: white;">廊坊开发区世通科技有限公司</a></span>
+
+			</p>
+
+		</footer>
+
+		<!-- start: JavaScript-->
+
+		<script src="js/jquery-2.1.3.min.js"></script>
+		<script src="js/hbAddress.js"></script>
+		<script src="js/angularjs/angular-1.5.8.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrapValidator.js"></script>
+		<script src="js/zipCode.js"></script>
+
+		<script type="text/javascript" charset="utf-8" src="js/angularjs/common.js"></script>
+		<script src="js/angularjs/jquery-cookie.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/pagejs/configs.js"></script>
+		<script src="js/pagejs/jquery.cookie.js"></script>
+		<script src="js/pagejs/addyanfa.js"></script>
+
+		<script src="js/pagejs/ifLogin.js"></script>
+		<script src="js/pagejs/daohang.js"></script>
+
+		<script src="js/jquery-migrate-1.0.0.min.js"></script>
+
+		<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+
+		<script src="js/jquery.ui.touch-punch.js"></script>
+
+		<script src="js/modernizr.js"></script>
+
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/jquery.cookie.js"></script>
+
+		<script src='js/fullcalendar.min.js'></script>
+
+		<script src='js/jquery.dataTables.min.js'></script>
+
+		<script src="js/excanvas.js"></script>
+		<script src="js/jquery.flot.js"></script>
+		<script src="js/jquery.flot.pie.js"></script>
+		<script src="js/jquery.flot.stack.js"></script>
+		<script src="js/jquery.flot.resize.min.js"></script>
+
+		<script src="js/jquery.chosen.min.js"></script>
+
+		<script src="js/jquery.uniform.min.js"></script>
+
+		<script src="js/jquery.cleditor.min.js"></script>
+
+		<script src="js/jquery.noty.js"></script>
+
+		<script src="js/jquery.elfinder.min.js"></script>
+
+		<script src="js/jquery.raty.min.js"></script>
+
+		<script src="js/jquery.iphone.toggle.js"></script>
+
+		<script src="js/jquery.uploadify-3.1.min.js"></script>
+
+		<script src="js/jquery.gritter.min.js"></script>
+
+		<script src="js/jquery.imagesloaded.js"></script>
+
+		<script src="js/jquery.masonry.min.js"></script>
+
+		<script src="js/jquery.knob.modified.js"></script>
+
+		<script src="js/jquery.sparkline.min.js"></script>
+
+		<script src="js/counter.js"></script>
+
+		<script src="js/retina.js"></script>
+
+		<script src="js/custom.js"></script>
+		<script type="text/javascript">
+			addressInit('cmbProvince', 'cmbCity', 'cmbArea');
+		</script>
+
+	</body>
+
+</html>

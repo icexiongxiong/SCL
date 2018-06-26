@@ -1,0 +1,62 @@
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <h1>CORS</h1>
+    <input type="button" onclick="XhrGetRequest();" value="用户登陆" />
+
+    <script type="text/javascript">
+        function XhrGetRequest(){
+            var xhr =new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    var data = xhr.responseText;
+                    alert(data);
+                }
+            };
+            xhr.open('post', "http://localhost:8081/login", true);
+            xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF-8");
+            xhr.withCredentials = true;
+          xhr.send("username=zhangsan&password=123456");
+        }
+    </script>    
+    
+    <input type="button" onclick="XhrGetRequest1();" value="Get获取信息" />
+
+    <script type="text/javascript">
+        function XhrGetRequest1(){
+            var xhr =new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    var data = xhr.responseText;
+                    alert(data);
+                }
+            };
+            xhr.open('get', "http://localhost:8081/menu/navi", true);
+            xhr.withCredentials = true;
+            xhr.send();
+        }
+    </script>    
+    <input type="button" onclick="XhrGetRequest2();" value="get注销登录" />
+
+    <script type="text/javascript">
+        function XhrGetRequest2(){
+            var xhr =new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4){
+                    var data = xhr.responseText;
+                    alert(data);
+                }
+            };
+            xhr.open('get', "http://localhost:8081/logout", true);
+            xhr.withCredentials = true;
+            xhr.send();
+        }
+    </script>
+    
+
+</body>
+</html>

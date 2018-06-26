@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<!-- start: Meta -->
+		<meta charset="utf-8">
+		<title>咨询顾问部客户信息</title>
+		<meta name="description" content="Bootstrap Metro Dashboard">
+		<meta name="author" content="Dennis Ji">
+		<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+		<!-- end: Meta -->
+
+		<!-- start: Mobile Specific -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- end: Mobile Specific -->
+
+		<!-- start: CSS -->
+		<link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link id="base-style" href="css/style.css" rel="stylesheet">
+		<link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+		<!-- end: CSS -->
+
+		<link rel="shortcut icon" href="img/favicon.ico">
+		<!-- end: Favicon -->
+
+	</head>
+
+	<body ng-app="consultlist" ng-controller="consultlistcontroller">
+		<!-- start: Header -->
+		<div class="navbar">
+			<div class="navbar-inner">
+				<div class="container-fluid">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</a>
+					<a class="brand" href="index.html"><span style="font-size: 20px;">客户关系管理系统</span></a>
+
+					<!-- start: Header Menu -->
+					<div class="nav-no-collapse header-nav">
+						<ul class="nav pull-right">
+
+							<!-- start: 顶部右侧 -->
+							<li class="dropdown">
+								<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+									<i class="halflings-icon white user"></i><span class="userName"></span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li class="dropdown-menu-title">
+										<span>系统设置</span>
+									</li>
+									<li>
+										<a href="#"><i class="halflings-icon user"></i>简介</a>
+									</li>
+									<li>
+										<a href="login.html"><i class="halflings-icon off"></i> 退出</a>
+									</li>
+								</ul>
+							</li>
+							<!-- end: User Dropdown -->
+						</ul>
+					</div>
+					<!-- end: Header Menu -->
+
+				</div>
+			</div>
+		</div>
+		<!-- start: Header -->
+
+		<div class="container-fluid-full">
+			<div class="row-fluid">
+
+				<!-- 动态生成左侧导航条-->
+				<div id="sidebar-left" class="span2">
+					<div class="daohang nav-collapse sidebar-nav">
+
+					</div>
+				</div>
+
+				<!-- end: Main Menu -->
+
+				<noscript>
+				<div class="alert alert-block span10">
+					<h4 class="alert-heading">Warning!</h4>
+					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+				</div>
+			</noscript>
+
+				<!-- start: Content -->
+				<div id="content" class="span10">
+
+					<ul class="breadcrumb">
+						<li>
+							<i class="icon-home"></i>
+							<a href="index.html">主页</a>
+							<i class="icon-angle-right"></i>
+						</li>
+						<li>
+							<a href="#">客户信息</a>
+						</li>
+					</ul>
+
+					<div class="row-fluid sortable" style="min-height: 1000px;">
+						<div class="box span12">
+							<div class="box-header">
+								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>咨询顾问部客户基本信息</h2>
+								<div class="box-icon">
+
+									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+									<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+								</div>
+							</div>
+							<div class="box-content">
+								<table style="margin-top: 10px;width: 100%;">
+									<tr>
+										<td id="kscx" ng-show="{{datas}}==1">按科室查询：
+											<select id="keshi" style="width: 45%;">
+												<option>
+												</option>
+												<option ng-repeat="keshi in keshis" value="{{keshi.name}}" ng-bind="keshi.name">
+												</option>
+											</select>
+										</td>
+										<td id="rycx" ng-show="{{datas}}==1||{{datas}}==2">按人员查询：
+											<select id="renyuan" style="width: 45%;">
+												<option>
+												</option>
+												<option ng-repeat="renyuan in renyuans" value="{{renyuan.username}}" ng-bind="renyuan.username">
+												</option>
+											</select>
+										</td>
+										<!--<td id="hycx" ng-show="{{datas}}==1">按行业查询：
+											<select id="industrykind" name="industrykind" style="width: 45%;">
+												<option value=""></option>
+												<option value="政府部门">政府部门</option>
+												<option value="电力、热力、燃气及水的生产和供应业">电力、热力、燃气及水的生产和供应业</option>
+												<option value="科学研究和技术服务业">科学研究和技术服务业</option>
+												<option value="国际组织">国际组织</option>
+												<option value="居民服务、修理和和其他服务业">居民服务、修理和和其他服务业</option>
+												<option value="信息传输、软件和信息技术服务业">信息传输、软件和信息技术服务业</option>
+												<option value="交通运输、仓储和邮政业">交通运输、仓储和邮政业</option>
+												<option value="批发和零售业">批发和零售业</option>
+												<option value="教育">教育</option>
+												<option value="采矿业">采矿业</option>
+												<option value="租赁和商务服务业">租赁和商务服务业</option>
+												<option value="住宿和餐饮业">住宿和餐饮业</option>
+												<option value="金融业">金融业</option>
+												<option value="文化、体育和娱乐业">文化、体育和娱乐业</option>
+												<option value="制造业">制造业</option>
+												<option value="农、林、牧、渔业">农、林、牧、渔业</option>
+												<option value="水利、环境和公共设施管理业">水利、环境和公共设施管理业</option>
+												<option value="公共管理、社会保障和社会组织">公共管理、社会保障和社会组织</option>
+												<option value="房地产业">房地产业</option>
+												<option value="卫生和社会工作">卫生和社会工作</option>
+												<option value="建筑业">建筑业</option>
+												<option value="其他">其他</option>
+											</select>
+										</td>-->
+										<td>
+											Search:&nbsp;<input class="input-xlarge focused" id="search" type="text" placeholder="请输入企业名" style="width: 35%;"><i class="cx halflings-icon search" style="margin-top: 5px;"></i>
+										</td>
+
+									</tr>
+								</table>
+								<table class="table table-bordered table-striped table-condensed" style="margin-top: 5px;">
+									<thead>
+										<tr>
+											<th>序号</th>
+											<th style="text-align: center;" id="bmt" ng-show="{{datas}}==1">部门</th>
+											<th style="text-align: center;" id="ryt" ng-show="{{datas}}==2||{{datas}}==1">人员</th>
+											<th style="text-align: center;">企业名称</th>
+											<th style="text-align: center;">所属行业</th>
+											<th style="text-align: center;">企业是否上市</th>
+											<th style="text-align: center;">上市代码</th>
+											<th style="text-align: center;">上市时间</th>
+											<th style="text-align: center;">上市类型</th>
+											<th style="text-align: center;">股票代码</th>
+											<th style="text-align: center;">职工人数</th>
+											<th style="text-align: center;">科技人员人数</th>
+											<th style="text-align: center;">企业信用代码</th>
+											<th style="text-align: center;">企业法人</th>
+											<th style="text-align: center;">注册资金</th>
+											<th style="text-align: center;">成立时间</th>
+											<th style="text-align: center;">企业类型</th>									
+											<th style="text-align: center;">地址</th>
+											<th style="text-align: center;">联系人</th>
+											<th style="text-align: center;">联系方式</th>
+											<th style="text-align: center;">主营范围</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr class="khlist" ng-repeat="kehuroot in pageData.root" 　id="{{kehuroot.id}}">
+											<td ng-bind="pageData.start+$index+1" style="text-align: center;"></td>
+											<td style="text-align: center;" ng-bind="kehuroot.organName" id="bm" ng-show="{{datas}}==1">&nbsp;</td>
+											<td style="text-align: center;" ng-bind="kehuroot.username" id="ry" ng-show="{{datas}}==2||{{datas}}==1">&nbsp;</td>
+											<td style="text-align: center;">
+												<a href="consultdetaillist.html?id={{kehuroot.id}}&name={{kehuroot.companyname}}" ng-bind="kehuroot.companyname" style="font-weight: 600;"></a>
+											</td>
+											<td ng-bind="kehuroot.industrykind"></td>
+											<td ng-bind="kehuroot.whetherpublic"></td>
+											<td ng-bind="kehuroot.publiccode"></td>
+											<td ng-bind="kehuroot.publictime|date:'yyyy-MM-dd'"></td>
+											<td ng-bind="kehuroot.publiccode"></td>
+											<td ng-bind="kehuroot.publictype"></td>
+											<td ng-bind="kehuroot.stockcode"></td>
+											<td ng-bind="kehuroot.staffnum"></td>
+											<td ng-bind="kehuroot.sciencestaffnum"></td>
+											<td class="center" ng-bind="kehuroot.legalperson"></td>
+											<td ng-bind="kehuroot.fund"></td>
+											<td ng-bind="kehuroot.buildtime|date:'yyyy-MM-dd'"></td>
+											<td ng-bind="kehuroot.companytype"></td>
+											<td>{{kehuroot.province}}{{kehuroot.city}}{{kehuroot.coutry}}</td>
+											<td>
+												<span class="label label-success" ng-bind="kehuroot.contactperson"></span>
+											</td>
+											<td>
+												<span class="label label-warning" ng-bind="kehuroot.telphone"></span>
+											</td>
+											<td ng-bind="kehuroot.mainfield"></td>
+											<td class="center">
+												<button ng-click="addxq(kehuroot.id,kehuroot.companyname)" class="btn btn-success" id="{{kehuroot.id}}" name="{{kehuroot.companyname}}">新建详情</button>
+												<button ng-click="editkh(kehuroot.id)" class="btn btn-info" id="{{kehuroot.id}}">编辑</button>
+												<button ng-click="delkh(kehuroot.id)" class="delkh btn btn-danger" id="{{kehuroot.id}}" ng-show="{{datas}}==2||{{datas}}==1">删除</button>
+											</td>
+
+										</tr>
+
+									</tbody>
+								</table>
+								<div class="pagination pagination-centered">
+									<ul>
+										<li>
+											<a href="#" class="prev">上一页</a>
+										</li>
+										<li class="active">
+											<span>第 <a href="#" class="dang"></a>页</span>
+										</li>
+										<li><span>共<a href="#" class="zong"></a>页</span></li>
+
+										<li>
+											<a href="#" class="next">下一页</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!--/span-->
+					</div>
+					<!--/row-->
+
+					<span style="color: red;display: none;" class="ts"></span></div>
+			</div>
+			<!--/.fluid-container-->
+
+			<!-- end: Content -->
+		</div>
+		<!--/#content.span10-->
+		</div>
+		<!--/fluid-row-->
+
+		<div class="clearfix"></div>
+
+		<footer>
+
+			<p>
+				<span style="text-align:left;float:left">&copy; 2017 <a href="http://www.lfshitong.com/" style="color: white;">廊坊开发区世通科技有限公司</a></span>
+
+			</p>
+
+		</footer>
+
+		<!-- start: JavaScript-->
+
+		<script src="js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/angularjs/angular-1.5.8.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/angularjs/common.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/pagejs/configs.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/jquery-cookie.js"></script>
+		<script src="js/pagejs/ifLogin.js"></script>
+		<script src="js/pagejs/daohang.js"></script>
+		<script src="js/pagejs/conslutlist.js"></script>
+
+		<script src="js/jquery-migrate-1.0.0.min.js"></script>
+
+		<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+
+		<script src="js/jquery.ui.touch-punch.js"></script>
+
+		<script src="js/modernizr.js"></script>
+
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/jquery.cookie.js"></script>
+
+		<script src='js/fullcalendar.min.js'></script>
+
+		<script src='js/jquery.dataTables.min.js'></script>
+
+		<script src="js/excanvas.js"></script>
+		<script src="js/jquery.flot.js"></script>
+		<script src="js/jquery.flot.pie.js"></script>
+		<script src="js/jquery.flot.stack.js"></script>
+		<script src="js/jquery.flot.resize.min.js"></script>
+
+		<script src="js/jquery.chosen.min.js"></script>
+
+		<script src="js/jquery.uniform.min.js"></script>
+
+		<script src="js/jquery.cleditor.min.js"></script>
+
+		<script src="js/jquery.noty.js"></script>
+
+		<script src="js/jquery.elfinder.min.js"></script>
+
+		<script src="js/jquery.raty.min.js"></script>
+
+		<script src="js/jquery.iphone.toggle.js"></script>
+
+		<script src="js/jquery.uploadify-3.1.min.js"></script>
+
+		<script src="js/jquery.gritter.min.js"></script>
+
+		<script src="js/jquery.imagesloaded.js"></script>
+
+		<script src="js/jquery.masonry.min.js"></script>
+
+		<script src="js/jquery.knob.modified.js"></script>
+
+		<script src="js/jquery.sparkline.min.js"></script>
+
+		<script src="js/counter.js"></script>
+
+		<script src="js/retina.js"></script>
+
+		<script src="js/custom.js"></script>
+	</body>
+
+</html>

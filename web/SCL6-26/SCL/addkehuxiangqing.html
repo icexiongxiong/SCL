@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<!-- start: Meta -->
+	<meta charset="utf-8">
+	<title>新增客户详细信息</title>
+	<meta name="description" content="Bootstrap Metro Dashboard">
+	<meta name="author" content="Dennis Ji">
+	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+	<!-- end: Meta -->
+	
+	<!-- start: Mobile Specific -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- end: Mobile Specific -->
+	
+	<!-- start: CSS -->
+	<link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/htmleaf-demo.css" />
+	<link href="css/bootstrap-datepicker3.css" />
+	<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link id="base-style" href="css/style.css" rel="stylesheet">
+	<link id="base-style-responsive" href="css/style-responsive.css" rel="stylesheet">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+	<!-- end: CSS -->
+
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<!-- end: Favicon -->
+	<style>
+		.table th{
+			text-align: center;
+			vertical-align: middle;
+			height: 38px;
+			width: 15%;
+			font-size: 16px;
+		}
+		.table td{
+			text-align: center;
+			vertical-align: middle;
+			height: 38px;
+		    font-size: 16px;
+		    font-weight: 600;
+		
+		}
+
+		#zuo{text-align: left;}
+		.checkbox,.text{
+			font-size: 15px;
+			font-weight: 600;
+		}
+		.radio,.rad span{
+				font-size: 15px;
+			font-weight: 600;
+		}
+		
+	
+	</style>
+		
+		
+		
+</head>
+<!--kehuxiangqing   kehuxiangqingcontroller-->
+<body ng-app="addkehuxiangqing" ng-controller="addkehuxiangqingcontroller">
+		<!-- start: Header -->
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container-fluid">
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+						<a class="brand" href="index.html"><span style="font-size: 20px;">客户关系管理系统</span></a>
+								
+				<!-- start: Header Menu -->
+				<div class="nav-no-collapse header-nav">
+					<ul class="nav pull-right">
+					
+						
+						<!-- start: 顶部右侧 -->
+								<li class="dropdown">
+							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+								<i class="halflings-icon white user"></i><span class="userName"></span>
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li class="dropdown-menu-title">
+ 									<span>系统设置</span>
+								</li>
+								<li><a href="#"><i class="halflings-icon user"></i>简介</a></li>
+								<li><a href="login.html"><i class="halflings-icon off"></i> 退出</a></li>
+							</ul>
+						</li>
+						<!-- end: User Dropdown -->
+					</ul>
+				</div>
+				<!-- end: Header Menu -->
+				
+			</div>
+		</div>
+	</div>
+	<!-- start: Header -->
+	
+		<div class="container-fluid-full">
+		<div class="row-fluid">
+				
+				
+			<!-- 动态生成左侧导航条-->
+	<div id="sidebar-left" class="span2">
+				<div class="daohang nav-collapse sidebar-nav">
+				
+	
+				</div>
+			</div>
+		
+			<!-- end: Main Menu -->
+			
+			<noscript>
+				<div class="alert alert-block span10">
+					<h4 class="alert-heading">Warning!</h4>
+					<p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+				</div>
+			</noscript>
+			
+			<!-- start: Content -->
+			<div id="content" class="span10">
+			
+			
+			<ul class="breadcrumb">
+				<li>
+					<i class="icon-home"></i>
+					<a href="index.html">主页</a> 
+					<i class="icon-angle-right"></i>
+				</li>
+				<li><a href="#">客户详细信息</a></li>
+			</ul>
+
+	
+
+	
+			
+			<div class="row-fluid sortable">	
+				<div class="box span12">
+					<div class="box-header">
+						<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>企业工商信息</h2>
+						<div class="box-icon">
+						
+							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+				<!--table-striped table-condensed -->
+						<table class="table table-bordered  table-striped table-hover" style="margin-top: 5px;width: 85%;margin: 0 auto;">
+					
+							  <tbody>
+							  <tr>
+							  	<th >企业名称</th>
+							  	<td style="text-align: left;"><input type="text" id="companyname" ng-model="companyname"></td>
+							  	<th>企业信用代码</th>
+							  	<td style="text-align: left;"><input type="text" id="creditcode"></td>
+							  </tr>
+							  <tr>
+							    <th>企业法人</th>
+							 	<td style="text-align: left;"><input type="text" id="legalperson" ng-model="person"></td>
+							  	<th>法人联系方式</th>
+							  		<td style="text-align: left;"><input type="text" id="legalphone"></td>
+							  </tr>
+							  <tr>
+							     <th class="center">股东信息</th>
+							 	<td style="text-align: left;"><input type="text" id="stockmessage"></td>
+							  	<th class="center">注册资金</th>
+							  		<td style="text-align: left;"><input type="text" id="fund" ng-model="fund"></td>
+							  </tr>
+							  <tr>
+							  	 <th class="center">成立时间</th>
+							  	<td style="text-align: left;">
+					
+							  		<input class="datepicker" type="text" id="settime" ng-model="time">
+							  	</td>
+							  	<th class="center">企业类型</th>
+							  	<td style="text-align: left;">
+							  		 <select id="companytype" ng-init="selectedName=typenames" ng-model="selectedName">
+							  	<option　value="高新技术企业">高新技术企业</option>
+						         <option value="小巨人企业">小巨人企业</option>
+						          <option value="科技型中小企业">科技型中小企业</option>
+						          <option value="创新基金企业">创新基金企业</option>
+						          <option value="高新技术企业">高新技术企业</option>
+							　　　
+								  </select>
+							  		
+							  	</td>
+							  </tr>
+							  <tr>
+							 	 <th class="center">地<span style="padding-left:30px;">址</th>
+							 	<td style="text-align: left;">
+							 	<select id="cmbProvince" name="cmbProvince" style="width: 30%;"></select>  
+                        <select id="cmbCity" name="cmbCity" style="width: 30%;"></select>  
+                        <select id="cmbArea" name="cmbArea" style="width: 30%;"></select>  	
+							 		
+							 	</td>
+							  	<th class="center">企业人数</th>
+							  	<td style="text-align: left;"><input type="text" id="companynum"></td>
+							  </tr>
+							  <tr>
+							   <th class="center">联&nbsp;系&nbsp;人</th>
+							  		<td style="text-align: left;"><input type="text" id="linkman" ng-model="linkman"></td>
+							  	<th class="center">联系方式</th>
+							  	<td style="text-align: left;"><input type="text" id="contactway" ng-model="contactway"></td>
+							  </tr>
+							  <tr>
+							  	 <th class="center">企业微信公众号</th>
+							  		<td style="text-align: left;"><input type="text" id="weixin"></td>
+							  	<th class="center">企业邮箱</th>
+							  	<td style="text-align: left;"><input type="email" id="email"></td>
+							  </tr>
+							  <tr>
+							  	<th>领域/产品</th>
+							  	<td style="text-align: left;" colspan="3"><input type="text" id="product"></td>
+							  </tr>
+						
+								                          
+							  </tbody>
+						</table>  		
+					
+					</div>
+				</div>
+			</div>
+			
+		<div class="row-fluid sortable">	
+				<div class="box span12">
+					<div class="box-header">
+						<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>企业知识产权情况</h2>
+						<div class="box-icon">
+						
+							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+				<!--table-striped table-condensed -->
+						<table class="table table-bordered  table-hover" style="margin-top: 5px;width: 85%;margin: 0 auto;">
+					
+							  <tbody>
+						  <tr>
+						  	<th rowspan="3">商标</th> <th>普通商标<input type="text" style="width: 15%;" id="commonbrand">项</th> <th rowspan="3">软件著作权</th> <th rowspan="3"><input type="text" style="width: 15%;" id="softcopyright">项</th>  </tr>
+            <tr> <th>著名商标<input type="text" style="width: 15%;" id="famousbrand">项</th></tr>
+            <tr> <th>驰名商标<input type="text" style="width: 15%;" id="resoundbrand">项</th> </tr>
+						
+							  <tr>
+							    <th>发明专利</th>
+							  	<td><input type="text" style="width: 15%;" id="inventpatent">项</td>
+							  	<th>实用新型专利</th>
+							  	<td><input type="text" style="width: 15%;" id="newpatent">项</td>
+							  </tr>
+							  <tr>
+							    <th>外观专利</th>
+							  	<td><input type="text" style="width: 15%;" id="appearpatent">项</td>
+							  	<th>其他</th>
+							  	<td><input type="text" id="otherpatent"></td>
+							  </tr>
+							               
+							  </tbody>
+						</table>  		
+					
+					</div>
+				</div>
+			</div>		
+			
+	
+		<div class="row-fluid sortable">	
+				<div class="box span12">
+					<div class="box-header">
+						<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>科技创新情况</h2>
+						<div class="box-icon">
+						
+							<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+							<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+						</div>
+					</div>
+					<div class="box-content">
+				<!--table-striped table-condensed -->
+						<table class="table table-bordered  table-hover" style="margin-top: 5px;width: 85%;margin: 0 auto;">
+					
+							  <tbody>
+						  <tr>
+						  	<th>公司性质</th>
+						  	<td id="zuo" colspan="3">
+							<div class="controls">
+								  <label class="radio">
+									<input type="radio" name="optionsRadios" id="statenature" value="国有">
+									国有
+								  </label>
+								  <label class="radio">
+									<input type="radio" name="optionsRadios" id="mingyingnature" value="民营">
+									民营
+								  </label>
+								
+								  <label class="radio">
+									<input type="radio" name="optionsRadios" id="private" value="私企">
+									私企
+								  </label>
+								    <label class="radio">
+									<input type="radio" name="optionsRadios" id="jointnature" value="合资">
+									合资
+								  </label>
+								  
+								    <label class="radio">
+									<input type="radio" name="optionsRadios" id="foreignnature" value="外资">
+									外资
+								  </label>
+								  
+								      <label class="radio">
+									<input type="radio" name="optionsRadios" id="othernature" value="其他">
+									其他
+								  </label>
+
+								</div>
+						  	</td> 
+						  </tr>
+         
+						
+							  <tr>
+							    <th>公司类型</th>
+							 	<td id="zuo" colspan="3">
+						
+							  	<div class="controls" id="h1">
+								  <label class="checkbox inline">
+								  <input type="checkbox" ng-model="testscience" name="gongsileixing" id="sciencefirm" value="科技型中小企业" >&nbsp;科技型中小企业
+								　	<span style="padding-left:30px;"> 
+									认定年度:&nbsp;		
+						<input class="datepicker" type="text" ng-disabled="!testscience" id="scienceyear" style="width: 20%;" ng-model="z1" name="y">
+								  </label>
+	
+							
+								</div>
+								<div class="controls">
+								 <label class="checkbox inline">
+								<input type="checkbox" name="gongsileixing" id="highfirm" value="高新技术企业" ng-model="testhigh"> 高新技术企业　　&nbsp;&nbsp;
+									<span style="padding-left:25px;"> 认定年度:&nbsp;
+								 <input class="datepicker" type="text" style="width: 20%;" id="highyear" ng-disabled="!testhigh" ng-model="z2" name="y">
+								 </label>
+								</div>
+								
+								<div class="controls">
+									  <label class="checkbox inline">
+								<input type="checkbox" name="gongsileixing" id="uphighfirm" value="规上高新技术企业" ng-model="uptest"> 规上高新技术企业　　
+									<span style="padding-left:0px;"> 认定年度:&nbsp;
+								<input class="datepicker" type="text" style="width: 20%;" id="uphighyear" ng-disabled="!uptest" ng-model="z3" name="y">
+									  </label>
+								</div>	
+								
+								
+									<div class="controls">						
+							
+                                     <label class="checkbox inline">
+									<input type="checkbox" name="gongsileixing" id="giantfirm" value="科技小巨人企业" ng-model="gianttest"> 科技小巨人企业　
+										<span style="padding-left:30px;"> 认定年度:&nbsp;
+								  <input class="datepicker" type="text" style="width: 20%;" id="giantfirmyear" ng-disabled="!gianttest" ng-model="z4" name="y">
+                                     </label>
+								</div>	
+					
+						
+						  	</td> 
+						  	<td><span style="color: red;display: none;" class="gb"></span></td>
+							  </tr>
+							  <tr>
+							    <th>研发机构类型</th>
+							
+							  	<td id="zuo" colspan="3">
+							  	   <div class="controls">
+								  <label class="checkbox inline">
+									<input type="checkbox" id="keylab" value="国家重点实验室" name="yfjg">国家重点实验室　
+								  </label>
+                              	
+								  <label class="checkbox inline">
+									<span style="padding-left:28px;"> 
+										<input type="checkbox" id="nationtechnicalcenter" value="国家级技术中心" name="yfjg">国家级技术中心　　
+								 </label>
+								  <label class="checkbox inline">
+									<span style="padding-left:49px;">
+										<input type="checkbox" id="nationresearchcenter" value="国家级工程技术研究中心" name="yfjg"> 国家级工程技术研究中心　
+								 </label>
+								</div>	
+								
+								  <div class="controls">
+								  <label class="checkbox inline">
+									<input type="checkbox" id="nationlab" value="国家工程实验室" name="yfjg">国家工程实验室　
+								  </label>
+                              	
+								  <label class="checkbox inline">
+									<span style="padding-left:28px;">
+									<input type="checkbox" id="provincialresearchcenter" value="省级工程技术研究中心" name="yfjg"> 省级工程技术研究中心　　
+								 </label>
+								  <label class="checkbox inline">
+									<input type="checkbox" id="provincialkeylab" value="省级重点实验室" name="yfjg"> 省级重点实验室
+								 </label>
+								</div>
+								
+								<div class="controls">
+								  <label class="checkbox inline">
+									<input type="checkbox" id="provincialinstitute" value="省级产业技术研究院" name="yfjg">省级产业技术研究院　
+								  </label>
+                              	
+								  <label class="checkbox inline">
+									<input type="checkbox" id="provinciallab" value="省工程实验室" name="yfjg">省工程实验室　　
+								 </label>
+								  <label class="checkbox inline">
+									<span style="padding-left:62px;">
+									<input type="checkbox" id="provincialcenter" value="省级技术中心" name="yfjg"> 省级技术中心
+								 </label>
+								</div>	
+								
+								  <div class="controls">
+								  <label class="checkbox inline">
+									<input type="checkbox" id="citycenter" value="市级研发中心" name="yfjg">市级研发中心　
+								  </label>
+                              	
+							
+								</div>	
+								
+							  		
+							  		
+							  		
+							  	</td>
+							  </tr>
+							
+							  <tr>
+							    <th>承担项目类型</th>
+							    <td id="zuo" colspan="3">
+							       <div class="controls">
+								  <label class="checkbox inline">								
+									<input type="checkbox" id="nationinnovate" value="国家创新基金项目" ng-model="test" name="projectkind">国家创新基金项目　
+									<span style="padding-left:60px;">申请年度:
+									<input class="datepicker" type="text" id="nationinnovateyear" value="" ng-disabled="!test" style="width: 20%;">  
+									  <span style="padding-left:30px;">执行期：　<input type="text" id="nationinnovateperiod" value="" style="width: 10%;" ng-disabled="!test">年
+								 </label>
+						
+                                                                          
+								</div>		
+							  
+							       <div class="controls">
+									  <label class="checkbox inline">
+									<input type="checkbox" id="hbinnovate" value="河北省创新基金项目" ng-model="test1" name="projectkind">河北省创新基金项目　
+								  <span style="padding-left:45px;"> 申请年度:  
+								 <input class="datepicker" type="text" id="hbinnovateyear" ng-disabled="!test1" style="width: 20%;"> 
+								 <span style="padding-left:30px;">  执行期：　<input type="text" id="hbinnovateperiod" value="" style="width: 10%;" ng-disabled="!test1">年	 
+									  </label>   
+							                                                                        
+								</div>	 
+							    
+							      <div class="controls">
+									 <label class="checkbox inline">
+									<input type="checkbox" id="hbgiant" value="河北省科技小巨人项目" ng-model="test2" name="projectkind">河北省科技小巨人项目　
+								  	  <span style="padding-left:30px;">   申请年度:
+									 <input class="datepicker" type="text" id="hbgiantyear" ng-disabled="!test2" style="width: 20%;">   
+									   <span style="padding-left:30px;">  执行期：　<input type="text" id="hbgiantperiod" value="" style="width: 10%;" ng-disabled="!test2">年
+									</label>  
+							                                                                        
+								</div>	   
+							         <div class="controls">
+									 <label class="checkbox inline">
+									<input type="checkbox" id="hbplan" value="河北省科技支撑计划" ng-model="test3" name="projectkind">河北省科技支撑计划　
+								  	<span style="padding-left:45px;"> 申请年度:
+									  <input class="datepicker" type="text" id="hbplanyear" ng-disabled="!test3" style="width: 20%;"> 
+									 <span style="padding-left:30px;">执行期：　<input type="text" id="hbplanperiod" value="" style="width: 10%;" ng-disabled="!test3">年
+									 </label>  
+                                                                        
+								</div>
+								   <div class="controls">
+									 <label class="checkbox inline">
+									<input type="checkbox" id="lfplan" value="廊坊市科技支撑计划" ng-model="test4" name="projectkind">廊坊市科技支撑计划　
+								   <span style="padding-left:45px;">申请年度:
+									<input class="datepicker" type="text" id="lfplanyear" ng-disabled="!test4" style="width: 20%;"> 
+									<span style="padding-left:30px;"> 执行期：　<input type="text" id="lfplanperiod" value="" style="width: 10%;" ng-disabled="!test4">年 
+									 </label>  
+							                                                                       
+								</div>	
+					    							    	
+							    </td>
+
+							  </tr>	
+					        <tr>
+							    <th>研发人员</th>
+							  	<td style="width: 30%;">　
+							  		<input class="datepicker" type="text" id="researchyear"  style="width: 30%;"> 
+							  		年　<input type="text" id="researchnum" value="" style="width: 20%;">人数</td>
+							  	<th>R&D</th>
+							  <td style="text-align: left;"><input type="text" id="money" style="width: 30%;">万元</td>
+							  </tr>		
+							    <tr>
+							    <th>四技合同情况</th>
+							  	<td colspan="3"  style="text-align: left;padding-left:20px;">　
+							  	  	<div class="controls">
+								  <label class="text inline">
+									技术开发合同&nbsp;<input type="text" id="exploitcontract" style="width: 10%;">项
+								  </label>
+                              	
+								  <label class="text inline">
+								 技术转让合同&nbsp;<input type="text" id="transfercontract"  style="width: 10%;">项
+								 </label>
+							
+								</div>
+								
+									<div class="controls">						
+								  <label class="text inline">
+								技术服务合同&nbsp;<input type="text" id="servecontract"  style="width: 10%;">项
+								 </label>
+                                     <label class="text inline">
+									技术咨询合同&nbsp;<input type="text" id="consultcontract"  style="width: 10%;">项
+								  </label>
+								</div>		
+							  	
+							  	
+							  	</td>
+							  
+							  </tr>	
+					  <tr>
+						  	<th>产学研情况</th>
+						  	<td id="zuo" colspan="3">
+							<div class="controls">								 
+								   <label class="radio">
+								<input type="radio" name="Radios3" id="teachyes" value="是" ng-model="test6"> 是
+							
+									<span style="padding-left:20px;">合作机构:&nbsp;<input type="text" id="agency" ng-disabled="!test6">
+								  </label>
+								 
+								 
+								</div>							 
+								
+								</div>
+								<div class="controls">
+								  <label class="radio">
+									<input type="radio" name="Radios3" id="techno" value="否"> 否
+								  </label>
+								
+								</div>	
+								
+						  	</td> 
+						  </tr>	
+					  <tr>
+						  	<th>科技金融情况</th>
+						  	<td id="zuo" colspan="3">
+							<div class="controls">
+								  <label class="radio">
+									<input type="radio" name="Radios4" id="financialyes" value="是"> 是
+								  </label> 
+								 
+								 
+								</div>																	 
+								
+								</div>
+								<div class="controls">
+								  <label class="radio">
+									<input type="radio" name="Radios4" id="financialno" value="否"> 否
+								  </label>
+								
+								</div>	
+								
+						  	</td> 
+						  </tr>		
+						  <tr>
+						  	<th>管理体系情况</th>
+						  	<td id="zuo" colspan="3">
+							<div class="controls">
+								  <label class="checkbox inline">
+								  <input type="checkbox" id="quality" ng-model="test7" name="managesystem" value="质量管理体系">质量管理体系					
+								<span style="padding-left:70px;">有效期:&nbsp;
+								<input class="datepicker" type="text" id="qualityyear" style="width: 30%;" ng-disabled="!test7"> 	
+									<!--<input type="text" id="qualityyear" style="width: 40%;" ng-disabled="!test7">-->
+								</label>
+								
+								</div>
+								<div class="controls">
+								   <label class="checkbox inline">
+									<input type="checkbox" id="environment" value="环境管理体系" ng-model="test8" name="managesystem">环境管理体系
+									<span style="padding-left:70px;">有效期:&nbsp;
+										<input class="datepicker" type="text" id="environmentyear" style="width: 30%;" ng-disabled="!test8"> 	
+										<!--<input type="text" id="environmentyear" style="width: 40%;" ng-disabled="!test8">-->
+								  </label>
+							</div>	
+								
+								
+							<div class="controls">
+								    <label class="checkbox inline">
+									<input type="checkbox" id="health" value="职业健康安全管理体系" ng-model="test9" name="managesystem">职业健康安全管理体系
+									<span style="padding-left:10px;">有效期:&nbsp;
+								<input class="datepicker" type="text" id="healthyear" style="width: 30%;" ng-disabled="!test9"> 		
+										<!--<input type="text" id="healthyear" style="width: 40%;" ng-disabled="!test9">-->
+								 </label>
+							</div>
+								
+								<div class="controls">
+								  <label class="checkbox inline">
+									      其他:&nbsp;<input type="text" id="othermanage">	
+								 </label>
+	
+								</div>
+								
+								</div>
+						
+						  	</td> 
+						  </tr>		
+						    <tr>
+							    <th>中心服务项目</th>
+							    <td id="zuo" colspan="3">
+							       <div class="controls">
+								  <label class="checkbox inline">
+									<input type="checkbox" id="declare" value="项目申报服务" ng-model="test10" name="centralserver">项目申报服务　
+									<span style="padding-left:30px;">企业联系人:<input type="text" id="declareman" ng-disabled="!test10" style="width: 20%;"></span>
+									<span style="padding-left:20px;"> 联系方式：<input type="text" id="declaretel" value="" style="width: 20%;" ng-disabled="!test10"></span>
+								 </label>
+                                            
+								</div>		
+							  
+							       <div class="controls">
+									  <label class="checkbox inline">
+									<input type="checkbox" id="property" value="知识产权申请" ng-model="test11" name="centralserver">知识产权申请　
+								    <span style="padding-left:30px;">企业联系人:<input type="text" id="propertyman" ng-disabled="!test11" style="width: 20%;"></span>
+									<span style="padding-left:20px;"> 联系方式：<input type="text" id="propertytel" value="" style="width: 20%;" ng-disabled="!test11"></span>
+									  </label>   
+							                                                                         
+								</div>	 
+							    
+							      <div class="controls">
+									 <label class="checkbox inline">
+									<input type="checkbox" id="standardconsult" value="标准化咨询" ng-model="test12" name="centralserver">标准化咨询　
+								  <span style="padding-left:45px;">企业联系人:<input type="text" id="consultman" ng-disabled="!test12" style="width: 20%;"></span>
+									   <span style="padding-left:20px;"> 联系方式：<input type="text" id="" value="" style="width: 20%;" ng-disabled="!test12"></span> 
+									 </label>  
+				                                                                         
+								</div>	   
+							         <div class="controls">
+									 <label class="checkbox inline">
+									<input type="checkbox" id="trainserve" value="培训服务" ng-model="test13" name="centralserver">培训服务　
+								  <span style="padding-left:60px;">企业联系人:<input type="text" id="trainserveman" ng-disabled="!test13" style="width: 20%;"></span>
+									  <span style="padding-left:20px;"> 联系方式：<input type="text" id="trainservetel" value="" style="width: 20%;" ng-disabled="!test13"></span>
+									 </label>  
+					                                                                        
+								</div>
+								   <div class="controls">
+									 <label class="checkbox inline">
+									<input type="checkbox" id="erp" value="企业ERP" ng-model="test14" name="centralserver">企业ERP
+									 <span style="padding-left:50px;"><span style="padding-left:30px;">企业联系人:<input type="text" id="erpman" ng-disabled="!test14" style="width: 20%;">　</span>
+								    <span style="padding-left:0px;"> 联系方式：<input type="text" id="" value="" style="width: 20%;" ng-disabled="!test14"></span>
+									 </label>  
+                                                                         
+								</div>	
+								
+								<div class="controls">
+									 <label class="checkbox inline">
+									<input type="checkbox" id="monitor" value="安防监控" ng-model="test15" name="centralserver">安防监控　
+									<span style="padding-left:60px;">企业联系人:<input type="text" id="monitorman" ng-disabled="!test15" style="width: 20%;"></span>
+								    <span style="padding-left:20px;">联系方式：<input type="text" id="" value="" style="width: 20%;" ng-disabled="!test15"></span>
+									 </label>                                                                           
+								</div>	
+									<div class="controls">
+									 <label class="checkbox inline">
+									<input type="checkbox" id="webserve" value="网站建设服务" ng-model="test16" name="centralserver">网站建设服务　
+									 <span style="padding-left:30px;">企业联系人:<input type="text" id="webserveman" ng-disabled="!test16" style="width: 20%;"></span>
+									 <span style="padding-left:20px;"> 联系方式：<input type="text" id="webservetel" value="" style="width: 20%;" ng-disabled="!test16"></span>
+								  </label>  
+                                                                         
+								</div>
+								
+										<div class="controls">
+									 <label class="checkbox inline">
+									<input type="checkbox" id="machineserve" value="机房服务" ng-model="test17" name="centralserver">机房服务　
+									<span style="padding-left:60px;">企业联系人:<input type="text" id="machineserveman" ng-disabled="!test17" style="width: 20%;"></span>
+									 <span style="padding-left:20px;">联系方式：<input type="text" id="machineservetel" value="" style="width: 20%;" ng-disabled="!test17"></span>
+								  </label>  
+                                                                        
+								</div>		
+								
+					    							    	
+							    </td>
+
+							  </tr>		
+							  <tr>
+						  	<th>大中型仪器共享情况</th>
+						  	<td id="zuo" colspan="3">
+							<div class="controls">
+								
+								  <label class="radio">
+									<input type="radio" id="shareyes"  name="Radios5" value="是" ng-model="test18"> 是
+									<span style="padding-left:20px;">仪器名称:&nbsp;<input type="text" id="machinename" ng-disabled="!test18" style="width: 20%;">
+									型号:&nbsp;<input type="text" id="machinetype" ng-disabled="!test18" style="width: 20%;">
+									金额:&nbsp;<input type="text" id="machinemoney" ng-disabled="!test18" style="width: 20%;">
+								 </label>
+								</div>		 								
+								<!--</div>-->
+								<div class="controls">
+								  <label class="radio inline">
+									<input type="radio" name="Radios5" id="shareno" value="否"> 否
+								  </label>
+								
+								</div>	
+								
+						  	</td> 
+						  </tr>	
+						
+							  </tbody>
+						</table>  	
+						<!--  </div>-->
+
+					</div>
+
+				</div>
+		<span style="color: red;display: none;" class="ts"></span>			
+			</div>	
+	
+						 <div class="form-actions">
+ 	                    <center>
+								<button type="submit" class="kehuxq btn btn-primary">保存</button>
+
+								</center>
+							  </div>
+	
+    
+
+	</div>
+		</div>
+		</div><!--/fluid-row-->
+
+
+	<div class="clearfix"></div>
+	
+	<footer>
+
+		<p>
+			<span style="text-align:left;float:left">&copy; 2017 <a href="http://www.lfshitong.com/" style="color: white;">廊坊开发区世通科技有限公司</a></span>
+			
+		</p>
+
+	</footer>
+	
+	<!-- start: JavaScript-->
+
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/hbAddress.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="js/angularjs/angular-1.5.8.min.js"></script>
+<script src="js/dist/bootstrap-datepicker.min.js" charset="UTF-8"></script>
+<script src="js/dist/locales/bootstrap-datepicker.zh-CN.min.js" charset="UTF-8"></script>
+		<script type="text/javascript">
+		$(function(){
+			$('.datepicker').datepicker({
+				language: "zh-CN",
+//              format: "yyyy-mm-dd"
+                dateFormat: "yy-mm-dd"
+            
+			});
+		})
+	</script>
+<script type="text/javascript" charset="utf-8" src="js/angularjs/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/pagejs/configs.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/angularjs/jquery-cookie.js"></script>
+		<script src="js/pagejs/ifLogin.js"></script>
+		<script src="js/pagejs/daohang.js"></script>
+		<script src="js/pagejs/addkehuxiangqing.js"></script>
+		
+		
+	<script src="js/jquery-migrate-1.0.0.min.js"></script>
+	
+		<script src="js/jquery-ui-1.10.0.custom.min.js"></script>
+	
+		<script src="js/jquery.ui.touch-punch.js"></script>
+	
+		<script src="js/modernizr.js"></script>
+	
+		<script src="js/bootstrap.min.js"></script>
+	
+		<script src="js/jquery.cookie.js"></script>
+	
+		<script src='js/fullcalendar.min.js'></script>
+	
+		<script src='js/jquery.dataTables.min.js'></script>
+
+		<script src="js/excanvas.js"></script>
+	<script src="js/jquery.flot.js"></script>
+	<script src="js/jquery.flot.pie.js"></script>
+	<script src="js/jquery.flot.stack.js"></script>
+	<script src="js/jquery.flot.resize.min.js"></script>
+	
+		<script src="js/jquery.chosen.min.js"></script>
+	
+		<script src="js/jquery.uniform.min.js"></script>
+		
+		<script src="js/jquery.cleditor.min.js"></script>
+	
+		<script src="js/jquery.noty.js"></script>
+	
+		<script src="js/jquery.elfinder.min.js"></script>
+	
+		<script src="js/jquery.raty.min.js"></script>
+	
+		<script src="js/jquery.iphone.toggle.js"></script>
+	
+		<script src="js/jquery.uploadify-3.1.min.js"></script>
+	
+		<script src="js/jquery.gritter.min.js"></script>
+	
+		<script src="js/jquery.imagesloaded.js"></script>
+	
+		<script src="js/jquery.masonry.min.js"></script>
+	
+		<script src="js/jquery.knob.modified.js"></script>
+	
+		<script src="js/jquery.sparkline.min.js"></script>
+	
+		<script src="js/counter.js"></script>
+	
+		<script src="js/retina.js"></script>
+
+		<script src="js/custom.js"></script>
+	<!-- end: JavaScript-->
+	 <script type="text/javascript">  
+                    addressInit('cmbProvince', 'cmbCity', 'cmbArea');  
+               </script>  
+</body>
+</html>
